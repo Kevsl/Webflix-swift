@@ -12,57 +12,47 @@ struct MovieDatas: Codable {
     let totalResults: String
     let Response: String
 }
-let collectionIdentifier = "displayCollection"
-
-
 
 class ViewController: UIViewController {
+    
+    
 
-    var searchValue = ""
+    
+    let collectionIdentifier = "displayCollection"
     
     @IBOutlet weak var searchInputField: UITextField!
     
-    var movieDatas:MovieDatas?
-    let moviesListResults:[Movies]? = []
+    var movieDatas: MovieDatas?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchInputField.delegate = self
-        view.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(hideKeyboard)))
-        
-        
     }
     
-    @objc func hideKeyboard() {
-        view.endEditing(true)
-        getMovies()
-    }
+ 
     
-    @IBAction func searchFieldAction(_ sender: UITextField) {
-        searchValue = searchInputField.text ?? ""
-        getMovies()
-        
-    }
-    
-    @IBAction func siField(_ sender: UITextField) {
+    @IBAction func sitf(_ sender: UITextField) {
         getMovies()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == collectionIdentifier){
-            if let collectionViewController = segue.destination as? MovieCollectionViewController{
-                collectionViewController.moviesList = moviesListResults!
+        if segue.identifier == collectionIdentifier {
+            if let collectionViewController = segue.destination as? MovieCollectionViewController {
+                collectionViewController.moviesList = movieDatas?.Search
             }
         }
-        
-        
     }
     
     func getMovies() {
-        let urlString = "https://www.omdbapi.com/?s=\(searchInputField.text ?? "")&apikey=c6c2a5e9"
+        guard let searchValue = searchInputField.text, !searchValue.isEmpty else {
+            // Handle empty search input
+            return
+        }
+        
+        let urlString = "https://www.omdbapi.com/?s=\(searchValue)&apikey=c6c2a5e9"
         
         if let url = URL(string: urlString) {
-            URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
                 guard let self = self else { return }
                 
                 if let moviesData = data {
@@ -71,11 +61,7 @@ class ViewController: UIViewController {
                         self.movieDatas = moviesList
                         
                         DispatchQueue.main.async {
-                            
-                            
-                            self.performSegue(withIdentifier: collectionIdentifier, sender: nil)
-
-
+                            self.performSegue(withIdentifier: self.collectionIdentifier, sender: nil)
                         }
                     } catch {
                         print(error)
@@ -84,10 +70,6 @@ class ViewController: UIViewController {
             }.resume()
         }
     }
-}
-
-func truc(){
-    
 }
 
 extension ViewController: UITextFieldDelegate {

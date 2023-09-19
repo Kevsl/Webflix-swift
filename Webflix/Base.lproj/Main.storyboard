@@ -28,7 +28,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
-                                    <action selector="siField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="VAZ-q7-VCt"/>
+                                    <action selector="sitf:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="I7J-Yi-V3v"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -56,9 +56,9 @@
         <!--Movie Collection View Controller-->
         <scene sceneID="m3v-3Q-Eld">
             <objects>
-                <collectionViewController id="RbA-Dm-PNS" customClass="MovieCollectionViewController" customModule="Webflix" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController modalPresentationStyle="fullScreen" id="RbA-Dm-PNS" customClass="MovieCollectionViewController" customModule="Webflix" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Dbm-ES-Ebx">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gry-rf-v5F">
@@ -95,6 +95,10 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
+                                <connections>
+                                    <outlet property="movieImage" destination="BgH-Ik-HJU" id="gyJ-bP-CQS"/>
+                                    <outlet property="movieTitle" destination="hVw-5a-2Gw" id="eZL-3d-477"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -118,6 +122,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="T2G-Vb-MAb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g1j-nV-t8Q">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.92128556969999997" green="0.25583211150000001" blue="0.18878367909999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
