@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -28,16 +27,63 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
-                                    <action selector="sitf:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="I7J-Yi-V3v"/>
+                                    <action selector="sitfa:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="7VB-Fj-Tiz"/>
                                 </connections>
                             </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aUp-rO-RKs">
+                                <rect key="frame" x="25" y="226" width="343" height="443"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pPI-lM-pHe">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="84k-dT-hhl" customClass="CollectionViewCell" customModule="Webflix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bqd-UB-dhw">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sTj-ad-JeU">
+                                                    <rect key="frame" x="0.0" y="8" width="128" height="93"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oe-nf-hwD">
+                                                    <rect key="frame" x="43" y="105" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sTj-ad-JeU" firstAttribute="centerX" secondItem="2oe-nf-hwD" secondAttribute="centerX" id="MDV-fY-cOB"/>
+                                                <constraint firstItem="sTj-ad-JeU" firstAttribute="leading" secondItem="Bqd-UB-dhw" secondAttribute="leading" id="Qer-2C-Pzk"/>
+                                                <constraint firstItem="2oe-nf-hwD" firstAttribute="top" secondItem="sTj-ad-JeU" secondAttribute="bottom" constant="4" id="lQa-HY-rJk"/>
+                                                <constraint firstItem="sTj-ad-JeU" firstAttribute="centerX" secondItem="Bqd-UB-dhw" secondAttribute="centerX" id="mDC-ob-TmC"/>
+                                                <constraint firstItem="sTj-ad-JeU" firstAttribute="top" secondItem="Bqd-UB-dhw" secondAttribute="topMargin" id="o4k-ay-S39"/>
+                                                <constraint firstAttribute="bottom" secondItem="2oe-nf-hwD" secondAttribute="bottom" constant="2" id="svu-6d-fcd"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="movieImage" destination="sTj-ad-JeU" id="Kxb-FF-l88"/>
+                                            <outlet property="movieTitle" destination="2oe-nf-hwD" id="9hz-FA-76Z"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Ba1-Sn-bim" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="77" id="9rx-io-MT6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aUp-rO-RKs" secondAttribute="trailing" constant="25" id="Ehy-bc-EZm"/>
                             <constraint firstItem="Ba1-Sn-bim" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="FdL-I7-sF5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aUp-rO-RKs" secondAttribute="bottom" constant="100" id="JLC-Lm-cFK"/>
+                            <constraint firstItem="aUp-rO-RKs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="OBs-1F-cSk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ba1-Sn-bim" secondAttribute="trailing" constant="25" id="Xgi-QX-7QX"/>
+                            <constraint firstItem="aUp-rO-RKs" firstAttribute="top" secondItem="Ba1-Sn-bim" secondAttribute="bottom" constant="50" id="aqO-jL-Sl1"/>
                             <constraint firstItem="Ba1-Sn-bim" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="77" id="xZ0-DW-Cok"/>
                         </constraints>
                     </view>
@@ -45,76 +91,13 @@
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="collectionView" destination="aUp-rO-RKs" id="RSL-Y3-hth"/>
                         <outlet property="searchInputField" destination="Ba1-Sn-bim" id="zWH-xK-Zte"/>
-                        <segue destination="RbA-Dm-PNS" kind="show" identifier="displayCollection" id="aHE-xE-KXU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
-        </scene>
-        <!--Movie Collection View Controller-->
-        <scene sceneID="m3v-3Q-Eld">
-            <objects>
-                <collectionViewController modalPresentationStyle="fullScreen" id="RbA-Dm-PNS" customClass="MovieCollectionViewController" customModule="Webflix" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Dbm-ES-Ebx">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gry-rf-v5F">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="PXg-om-8fJ" customClass="CollectionViewCell" customModule="Webflix" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QNU-xZ-4f6">
-                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BgH-Ik-HJU">
-                                            <rect key="frame" x="0.0" y="-8" width="128" height="107"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVw-5a-2Gw">
-                                            <rect key="frame" x="43" y="103" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="BgH-Ik-HJU" firstAttribute="top" secondItem="QNU-xZ-4f6" secondAttribute="top" constant="-8" id="9Ut-Og-3mj"/>
-                                        <constraint firstAttribute="bottom" secondItem="hVw-5a-2Gw" secondAttribute="bottom" constant="4" id="EB6-qy-cFV"/>
-                                        <constraint firstItem="hVw-5a-2Gw" firstAttribute="top" secondItem="BgH-Ik-HJU" secondAttribute="bottom" constant="4" id="ZyP-zz-w2U"/>
-                                        <constraint firstItem="BgH-Ik-HJU" firstAttribute="centerX" secondItem="hVw-5a-2Gw" secondAttribute="centerX" id="prt-VL-tbl"/>
-                                        <constraint firstItem="hVw-5a-2Gw" firstAttribute="centerX" secondItem="QNU-xZ-4f6" secondAttribute="centerX" id="sAA-2J-nwr"/>
-                                        <constraint firstItem="BgH-Ik-HJU" firstAttribute="leading" secondItem="QNU-xZ-4f6" secondAttribute="leading" id="xFF-Jg-Jzi"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
-                                <connections>
-                                    <outlet property="movieImage" destination="BgH-Ik-HJU" id="gyJ-bP-CQS"/>
-                                    <outlet property="movieTitle" destination="hVw-5a-2Gw" id="eZL-3d-477"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="RbA-Dm-PNS" id="zF2-pF-vEb"/>
-                            <outlet property="delegate" destination="RbA-Dm-PNS" id="lIm-uC-AWr"/>
-                        </connections>
-                    </collectionView>
-                    <tabBarItem key="tabBarItem" title="" id="qU4-uE-O2Y">
-                        <imageReference key="image" image="play.rectangle" catalog="system" symbolScale="large"/>
-                        <color key="badgeColor" red="0.92128556969999997" green="0.25583211150000001" blue="0.18878367909999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </tabBarItem>
-                    <navigationItem key="navigationItem" id="qO5-2s-y2Q"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ets-Bd-e2C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="971.7557251908396" y="726.76056338028172"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zAe-80-J0c">
@@ -131,7 +114,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="nT9-By-E1K"/>
-                        <segue destination="RbA-Dm-PNS" kind="relationship" relationship="viewControllers" id="Ns5-eF-gyb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BeQ-X1-cen" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -139,13 +121,12 @@
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="aHE-xE-KXU"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="play.rectangle" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

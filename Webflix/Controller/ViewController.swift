@@ -1,5 +1,6 @@
 import UIKit
 
+
 struct Movie: Codable {
     let Title: String
     let Year: String
@@ -15,37 +16,24 @@ struct MovieDatas: Codable {
 
 class ViewController: UIViewController {
     
-    
-
-    
-    let collectionIdentifier = "displayCollection"
-    
     @IBOutlet weak var searchInputField: UITextField!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var movieDatas: MovieDatas?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchInputField.delegate = self
-    }
-    
- 
-    
-    @IBAction func sitf(_ sender: UITextField) {
-        getMovies()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == collectionIdentifier {
-            if let collectionViewController = segue.destination as? MovieCollectionViewController {
-                collectionViewController.moviesList = movieDatas?.Search
-            }
-        }
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+
     }
     
     func getMovies() {
         guard let searchValue = searchInputField.text, !searchValue.isEmpty else {
-            // Handle empty search input
+            
             return
         }
         
@@ -61,7 +49,7 @@ class ViewController: UIViewController {
                         self.movieDatas = moviesList
                         
                         DispatchQueue.main.async {
-                            self.performSegue(withIdentifier: self.collectionIdentifier, sender: nil)
+                            self.collectionView.reloadData()
                         }
                     } catch {
                         print(error)
@@ -70,11 +58,49 @@ class ViewController: UIViewController {
             }.resume()
         }
     }
+    
+    
+    @IBAction func sitfa(_ sender: UITextField) {
+    }
+    
 }
 
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        getMovies()
         return true
+    }
+}
+
+extension ViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movieDatas?.Search.count ?? 0
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CollectionViewCell else {
+            fatalError("Cell is not of type CollectionViewCell")
+        }
+        
+        if let movieDatas = movieDatas{
+            let movie = movieDatas.Search[indexPath.item]
+            cell.setup(movie)
+            
+        }
+        
+        return cell
+    }
+    
+    
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.collectionView.frame.width / 2 - 8
+        return CGSize(width: width, height: 200)
     }
 }
