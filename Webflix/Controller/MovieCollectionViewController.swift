@@ -5,7 +5,7 @@ private let reuseIdentifier = "Cell"
 class MovieCollectionViewController: UICollectionViewController {
 
     
-    var movieResponse:[Movie] = []
+    var movieResponse = [""]
     var totalResults = ""
     var searchedText = ""
     
@@ -19,8 +19,6 @@ class MovieCollectionViewController: UICollectionViewController {
     
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
       
-
-
     }
 
 
@@ -31,14 +29,14 @@ class MovieCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+    
         return 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
-        // Configure the cell
+
     
         return cell
     }
