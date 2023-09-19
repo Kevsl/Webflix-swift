@@ -10,12 +10,12 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var searchField: UITextField!
-    
     var searchValue = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchField.delegate = self
 
 
 
@@ -30,8 +30,6 @@ class ViewController: UIViewController {
         searchValue = searchField.text ?? ""
         getMovies()
     }
-    
-    
     
     
     func getMovies(){
