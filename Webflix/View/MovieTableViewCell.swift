@@ -1,6 +1,15 @@
+//
+//  MovieTableViewCell.swift
+//  Webflix
+//
+//  Created by K on 20/09/2023.
+//
+
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+
+
+class MovieTableViewCell: UITableViewCell {
 
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieImage: UIImageView!

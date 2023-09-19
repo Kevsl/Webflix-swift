@@ -45,7 +45,6 @@ class ViewController: UIViewController {
     
     func getMovies() {
         guard let searchValue = searchInputField.text, !searchValue.isEmpty else {
-            // Handle empty search input
             return
         }
         
