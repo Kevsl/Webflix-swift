@@ -13,6 +13,8 @@
 		0AE3AFF92AB97FF900E07B1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AE3AFF72AB97FF900E07B1B /* Main.storyboard */; };
 		0AE3AFFB2AB97FFA00E07B1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AE3AFFA2AB97FFA00E07B1B /* Assets.xcassets */; };
 		0AE3AFFE2AB97FFA00E07B1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AE3AFFC2AB97FFA00E07B1B /* LaunchScreen.storyboard */; };
+		0AE3B0092AB9852600E07B1B /* MovieCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3B0082AB9852600E07B1B /* MovieCollectionViewController.swift */; };
+		0AE3B00B2AB98DB900E07B1B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3B00A2AB98DB900E07B1B /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0AE3AFFA2AB97FFA00E07B1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AE3AFFD2AB97FFA00E07B1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AE3AFFF2AB97FFA00E07B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AE3B0082AB9852600E07B1B /* MovieCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewController.swift; sourceTree = "<group>"; };
+		0AE3B00A2AB98DB900E07B1B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		0AE3AFF02AB97FF900E07B1B /* Webflix */ = {
 			isa = PBXGroup;
 			children = (
+				0AE3B0072AB984CB00E07B1B /* Controller */,
+				0AE3B0062AB9848C00E07B1B /* View */,
+				0AE3B0052AB9848000E07B1B /* Model */,
 				0AE3AFF12AB97FF900E07B1B /* AppDelegate.swift */,
 				0AE3AFF32AB97FF900E07B1B /* SceneDelegate.swift */,
-				0AE3AFF52AB97FF900E07B1B /* ViewController.swift */,
 				0AE3AFF72AB97FF900E07B1B /* Main.storyboard */,
 				0AE3AFFA2AB97FFA00E07B1B /* Assets.xcassets */,
 				0AE3AFFC2AB97FFA00E07B1B /* LaunchScreen.storyboard */,
 				0AE3AFFF2AB97FFA00E07B1B /* Info.plist */,
 			);
 			path = Webflix;
+			sourceTree = "<group>";
+		};
+		0AE3B0052AB9848000E07B1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0AE3B00A2AB98DB900E07B1B /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0AE3B0062AB9848C00E07B1B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0AE3B0072AB984CB00E07B1B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0AE3AFF52AB97FF900E07B1B /* ViewController.swift */,
+				0AE3B0082AB9852600E07B1B /* MovieCollectionViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +169,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AE3AFF62AB97FF900E07B1B /* ViewController.swift in Sources */,
+				0AE3B0092AB9852600E07B1B /* MovieCollectionViewController.swift in Sources */,
 				0AE3AFF22AB97FF900E07B1B /* AppDelegate.swift in Sources */,
 				0AE3AFF42AB97FF900E07B1B /* SceneDelegate.swift in Sources */,
+				0AE3B00B2AB98DB900E07B1B /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
