@@ -7,11 +7,14 @@ struct Movie: Codable {
     let Poster: String
 }
 
-struct MovieResponse: Codable {
+struct MovieDatas: Codable {
     let Search: [Movie]
     let totalResults: String
     let Response: String
 }
+let collectionIdentifier = "displayCollection"
+
+
 
 class ViewController: UIViewController {
 
@@ -19,12 +22,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var searchInputField: UITextField!
     
-    var movieResponse: MovieResponse?
+    var movieDatas:MovieDatas?
+    let moviesListResults:[Movies]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchInputField.delegate = self
         view.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        
+        
     }
     
     @objc func hideKeyboard() {
@@ -35,10 +41,21 @@ class ViewController: UIViewController {
     @IBAction func searchFieldAction(_ sender: UITextField) {
         searchValue = searchInputField.text ?? ""
         getMovies()
+        
     }
     
     @IBAction func siField(_ sender: UITextField) {
         getMovies()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == collectionIdentifier){
+            if let collectionViewController = segue.destination as? MovieCollectionViewController{
+                collectionViewController.moviesList = moviesListResults!
+            }
+        }
+        
+        
     }
     
     func getMovies() {
@@ -50,12 +67,15 @@ class ViewController: UIViewController {
                 
                 if let moviesData = data {
                     do {
-                        let moviesList = try JSONDecoder().decode(MovieResponse.self, from: moviesData)
-                        self.movieResponse = moviesList
+                        let moviesList = try JSONDecoder().decode(MovieDatas.self, from: moviesData)
+                        self.movieDatas = moviesList
                         
                         DispatchQueue.main.async {
                             
-                            print(moviesList)
+                            
+                            self.performSegue(withIdentifier: collectionIdentifier, sender: nil)
+
+
                         }
                     } catch {
                         print(error)
@@ -64,6 +84,10 @@ class ViewController: UIViewController {
             }.resume()
         }
     }
+}
+
+func truc(){
+    
 }
 
 extension ViewController: UITextFieldDelegate {

@@ -15,6 +15,7 @@
 		0AE3AFFE2AB97FFA00E07B1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AE3AFFC2AB97FFA00E07B1B /* LaunchScreen.storyboard */; };
 		0AE3B0092AB9852600E07B1B /* MovieCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3B0082AB9852600E07B1B /* MovieCollectionViewController.swift */; };
 		0AE3B00B2AB98DB900E07B1B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3B00A2AB98DB900E07B1B /* Movie.swift */; };
+		0AE3B00D2AB9C8C000E07B1B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3B00C2AB9C8C000E07B1B /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0AE3AFFF2AB97FFA00E07B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AE3B0082AB9852600E07B1B /* MovieCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewController.swift; sourceTree = "<group>"; };
 		0AE3B00A2AB98DB900E07B1B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		0AE3B00C2AB9C8C000E07B1B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		0AE3B0062AB9848C00E07B1B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0AE3B00C2AB9C8C000E07B1B /* CollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			files = (
 				0AE3AFF62AB97FF900E07B1B /* ViewController.swift in Sources */,
 				0AE3B0092AB9852600E07B1B /* MovieCollectionViewController.swift in Sources */,
+				0AE3B00D2AB9C8C000E07B1B /* CollectionViewCell.swift in Sources */,
 				0AE3AFF22AB97FF900E07B1B /* AppDelegate.swift in Sources */,
 				0AE3AFF42AB97FF900E07B1B /* SceneDelegate.swift in Sources */,
 				0AE3B00B2AB98DB900E07B1B /* Movie.swift in Sources */,
