@@ -135,11 +135,70 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="nT9-By-E1K"/>
                         <segue destination="RbA-Dm-PNS" kind="relationship" relationship="viewControllers" id="Ns5-eF-gyb"/>
                         <segue destination="XPk-hb-dov" kind="relationship" relationship="viewControllers" id="FHj-I1-8uy"/>
+                        <segue destination="kbq-Ow-QtK" kind="relationship" relationship="viewControllers" id="mjZ-pB-t58"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BeQ-X1-cen" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+        </scene>
+        <!--Photos View Controller-->
+        <scene sceneID="BYm-hZ-4V1">
+            <objects>
+                <viewController id="kbq-Ow-QtK" customClass="PhotosViewController" customModule="Webflix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Ws-1Q-YkF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="108" translatesAutoresizingMaskIntoConstraints="NO" id="hHG-o0-oOg">
+                                <rect key="frame" x="65" y="643" width="275" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9O8-oB-2tf">
+                                        <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Library"/>
+                                        <connections>
+                                            <action selector="libraryButton:" destination="kbq-Ow-QtK" eventType="touchUpInside" id="gn5-rz-ezD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPs-Ch-G3a">
+                                        <rect key="frame" x="191.66666666666669" y="0.0" width="83.333333333333314" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Camera"/>
+                                        <connections>
+                                            <action selector="cameraPicker:" destination="kbq-Ow-QtK" eventType="touchUpInside" id="pjE-X0-ngP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YSq-X8-PAN">
+                                <rect key="frame" x="65" y="114" width="275" height="447"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="447" id="tel-CF-WLs"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DTq-KB-P1j"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YSq-X8-PAN" firstAttribute="top" secondItem="DTq-KB-P1j" secondAttribute="top" constant="55" id="6Wg-Mi-k1m"/>
+                            <constraint firstItem="YSq-X8-PAN" firstAttribute="centerX" secondItem="hHG-o0-oOg" secondAttribute="centerX" id="T5S-GE-1rg"/>
+                            <constraint firstItem="hHG-o0-oOg" firstAttribute="top" secondItem="YSq-X8-PAN" secondAttribute="bottom" constant="82" id="XNU-MX-C3C"/>
+                            <constraint firstItem="YSq-X8-PAN" firstAttribute="leading" secondItem="hHG-o0-oOg" secondAttribute="leading" id="eZh-Ie-jw9"/>
+                            <constraint firstItem="YSq-X8-PAN" firstAttribute="leading" secondItem="DTq-KB-P1j" secondAttribute="leading" constant="65" id="hJu-GD-fez"/>
+                            <constraint firstItem="DTq-KB-P1j" firstAttribute="trailing" secondItem="YSq-X8-PAN" secondAttribute="trailing" constant="53" id="kzc-Je-yiA"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="camera" catalog="system" selectedImage="camera.fill" id="44b-Wq-S1F"/>
+                    <connections>
+                        <outlet property="cameraBtn" destination="XPs-Ch-G3a" id="cVB-iw-0Hu"/>
+                        <outlet property="iv" destination="YSq-X8-PAN" id="7gX-NK-dSg"/>
+                        <outlet property="libraryBtn" destination="9O8-oB-2tf" id="b6N-wV-Lcu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5m-As-ReV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54.198473282442748" y="-763.38028169014092"/>
         </scene>
         <!--Movie Table Controller-->
         <scene sceneID="Wtx-kp-MwY">
@@ -233,6 +292,8 @@
         <segue reference="Ns5-eF-gyb"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="camera" catalog="system" width="128" height="93"/>
+        <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="list.bullet.clipboard" catalog="system" width="103" height="128"/>

@@ -18,6 +18,7 @@
 		0AE3B0092AB9852600E07B1B /* MovieCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3B0082AB9852600E07B1B /* MovieCollectionViewController.swift */; };
 		0AE3B00B2AB98DB900E07B1B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3B00A2AB98DB900E07B1B /* Movie.swift */; };
 		0AE3B00D2AB9C8C000E07B1B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3B00C2AB9C8C000E07B1B /* CollectionViewCell.swift */; };
+		0AE692252ABAB6EC00352CA4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE692242ABAB6EC00352CA4 /* PhotosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0AE3B0082AB9852600E07B1B /* MovieCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewController.swift; sourceTree = "<group>"; };
 		0AE3B00A2AB98DB900E07B1B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		0AE3B00C2AB9C8C000E07B1B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		0AE692242ABAB6EC00352CA4 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				0AE3AFF52AB97FF900E07B1B /* ViewController.swift */,
 				0AE3B0082AB9852600E07B1B /* MovieCollectionViewController.swift */,
 				0A8B62A22ABA5EE10039D1AB /* MovieTableController.swift */,
+				0AE692242ABAB6EC00352CA4 /* PhotosViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE692252ABAB6EC00352CA4 /* PhotosViewController.swift in Sources */,
 				0AE3AFF62AB97FF900E07B1B /* ViewController.swift in Sources */,
 				0A8B62A32ABA5EE10039D1AB /* MovieTableController.swift in Sources */,
 				0AE3B0092AB9852600E07B1B /* MovieCollectionViewController.swift in Sources */,
