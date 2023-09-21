@@ -34,6 +34,23 @@ class PhotosViewController: UIViewController {
         self.present(libraryPicker!, animated: true, completion: nil)
         
     }
+    
+    @IBAction func alertAction(_ sender: Any) {
+        
+        let alertController =  UIAlertController(title:"Suppression" , message:"Voullez vous vraiment supprimer cette photo ?" , preferredStyle: .alert)
+        let action = UIAlertAction(title: "Oui", style: .default){
+            act in  alertController.dismiss(animated: true, completion:  nil)
+        }
+        let cancel = UIAlertAction(title: "retour", style: .cancel)
+        
+        alertController.addAction(action)
+        alertController.addAction(cancel)
+        
+        
+        present(alertController, animated: true)
+    }
+    
+    
 }
 
 extension PhotosViewController: PHPickerViewControllerDelegate {
